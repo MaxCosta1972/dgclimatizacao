@@ -11,7 +11,6 @@ import { Faq } from './components/Faq';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { PhotoConfigDrawer } from './components/PhotoConfigDrawer';
 
 export function App() {
   return (
@@ -52,9 +51,6 @@ export function App() {
 
         {/* Botão Flutuante de WhatsApp Oficial */}
         <FloatingWhatsApp />
-
-        {/* Gerenciador Centralizado de Fotos e Contatos Reais */}
-        <PhotoConfigDrawer />
       </div>
     </SiteConfigProvider>
   );

@@ -74,6 +74,7 @@ export interface SiteConfig {
     social: {
       instagramUrl?: string;
       facebookUrl?: string;
+      youtubeUrl?: string;
     };
   };
   hero: {
@@ -138,8 +139,8 @@ export const initialSiteConfig: SiteConfig = {
     phoneFormatted: "(21) 97905-6031",
     isPhoneConfigured: true,
 
-    email: "contato@dgclimatizacao.com.br",
-    isEmailConfigured: false,
+    email: "dgclimatizacao806@gmail.com",
+    isEmailConfigured: true,
 
     addressCity: "Rio de Janeiro",
     addressState: "RJ",
@@ -154,11 +155,15 @@ export const initialSiteConfig: SiteConfig = {
 
     businessHours: {
       weekdays: "Segunda a Sexta: 08:00 às 18:00",
-      saturday: "Sábados: 08:00 às 13:00",
+      saturday: "Sábados: 08:00 às 15:00",
       sunday: "Atendimento emergencial sob consulta"
     },
 
-    social: {}
+    social: {
+      instagramUrl: "https://www.instagram.com/dg_climatizacao_7584?xtok=Y2dnbDN2dnB5OWo4",
+      facebookUrl: "https://www.facebook.com/share/1DwoAqsKRu/",
+      youtubeUrl: "https://youtube.com/@dgclimatizacao-z1j?si=3o-cPtBR3ns2MU2C"
+    }
   },
   hero: {
     titleHighlight: "AR-CONDICIONADO EM DIA.",
@@ -166,9 +171,9 @@ export const initialSiteConfig: SiteConfig = {
     subtitle: "A DG Climatização cuida do seu ar-condicionado com atenção aos detalhes, manutenção profissional e compromisso com o seu conforto.",
     primaryCtaText: "Solicitar orçamento",
     secondaryCtaText: "Conheça nossos serviços",
-    // Foto real com uniforme oficial e ferramentas da DG Climatização
-    imageSrc: "/assets/aistudio/DG_3_36c9ef75.jpeg",
-    imageAlt: "Técnico da DG Climatização com uniforme oficial, cinto de ferramentas e oficina técnica",
+    // Foto oficial DG 3: Técnico em uniforme oficial, logo na parede e contato oficial
+    imageSrc: "assets/aistudio/DG_3_36c9ef75.jpeg",
+    imageAlt: "DG Climatização - Atendimento e Manutenção Especializada de Ar-Condicionado (21) 97905-6031",
     badges: [
       "Atendimento Técnico Especializado",
       "Residencial e Predial",
@@ -263,9 +268,9 @@ export const initialSiteConfig: SiteConfig = {
       "Entendemos que o ar-condicionado não é apenas um eletrodoméstico: ele é o responsável pelo seu bem-estar diário, pelo conforto térmico da sua família e pela produtividade do seu espaço de trabalho. Por isso, cada atendimento é conduzido com calma, ferramentas apropriadas e respeito às boas práticas do setor.",
       "Nosso foco não é a pressa, mas sim a entrega de um serviço bem-feito, com explicações claras sobre o estado do seu equipamento e orientações honestas sobre o que realmente precisa ser realizado."
     ],
-    // Foto real do técnico da DG Climatização apresentando componentes internos
-    imageSrc: "/assets/aistudio/DG_1_83cbc04d.jpeg",
-    imageAlt: "Técnico da DG Climatização inspecionando e explicando os componentes mecânicos e elétricos de ar-condicionado",
+    // Foto oficial DG 1: Técnico apontando para a estrutura do compressor e conexões
+    imageSrc: "assets/aistudio/DG_1_83cbc04d.jpeg",
+    imageAlt: "Técnico especialista da DG Climatização em uniforme oficial demonstrando manutenção do compressor de ar-condicionado",
     commitments: [
       {
         title: "Proteção do seu ambiente",
@@ -327,19 +332,37 @@ export const initialSiteConfig: SiteConfig = {
     title: "O PODER DA HIGIENIZAÇÃO PROFISSIONAL",
     subtitle: "Compare o estado das aletas da serpentina antes e após o procedimento de limpeza profunda.",
     description: "Com o passar dos meses, poeira, ácaros e fungos se acumulam nas micro-aletas da evaporadora, bloqueando o fluxo de ar e comprometendo a qualidade do ar que você respira. Arraste o controle deslizante para ver a restauração do equipamento.",
-    beforeImage: "/src/assets/images/hvac_before_after_dirty_1792518165782.jpg",
+    beforeImage: "assets/images/hvac_before_after_dirty_1792518165782.jpg",
     beforeAlt: "Serpentina de ar-condicionado com acúmulo de poeira e sujeira antes da limpeza",
     beforeLabel: "Antes da Higienização",
-    afterImage: "/src/assets/images/hvac_clean_filter_coil_1792518166146.jpg",
+    afterImage: "assets/images/hvac_clean_filter_coil_1792518166146.jpg",
     afterAlt: "Serpentina de ar-condicionado perfeitamente limpa e higienizada com fluxo livre",
     afterLabel: "Depois da Limpeza Especializada"
   },
   gallery: [
     {
+      id: "g-novo-1",
+      title: "Técnico Oficial e Oficina Especializada",
+      category: "corretiva",
+      imageSrc: "assets/aistudio/hero_hvac_technician_1792518164085_bead8dc4.jpg",
+      alt: "Técnico da DG Climatização em uniforme oficial com cinto de ferramentas e unidade condensadora",
+      description: "Atendimento técnico padrão com ferramentas de ponta, diagnósticos elétricos e manutenções precisas.",
+      isRealPhoto: true
+    },
+    {
+      id: "g-novo-2",
+      title: "Entrega Técnica e Conforto Térmico",
+      category: "preventiva",
+      imageSrc: "assets/aistudio/hvac_outdoor_condenser_1792518165774_dda1f8f3.jpg",
+      alt: "Técnico da DG Climatização demonstrando aparelho de ar-condicionado split higienizado",
+      description: "Instalação e manutenção finalizadas com garantia de eficiência e ambiente agradável.",
+      isRealPhoto: true
+    },
+    {
       id: "g-oficial-1",
       title: "Equipe Oficial DG Climatização",
       category: "preventiva",
-      imageSrc: "/assets/aistudio/DG_3_36c9ef75.jpeg",
+      imageSrc: "assets/aistudio/DG_3_36c9ef75.jpeg",
       alt: "Técnico da DG Climatização em uniforme oficial com ferramentas e oficina técnica",
       description: "Profissional qualificado com uniforme oficial, ferramentas de ponta e cinto de intervenção rápida.",
       isRealPhoto: true
@@ -348,7 +371,7 @@ export const initialSiteConfig: SiteConfig = {
       id: "g-oficial-2",
       title: "Inspeção e Reparo de Componentes",
       category: "corretiva",
-      imageSrc: "/assets/aistudio/DG_1_83cbc04d.jpeg",
+      imageSrc: "assets/aistudio/DG_1_83cbc04d.jpeg",
       alt: "Técnico apontando e demonstrando a estrutura do compressor e conexões",
       description: "Análise minuciosa de circuitos elétricos, compressores e componentes para diagnóstico preciso.",
       isRealPhoto: true
@@ -357,7 +380,7 @@ export const initialSiteConfig: SiteConfig = {
       id: "g-oficial-3",
       title: "Instalação e Conforto no Ambiente",
       category: "preventiva",
-      imageSrc: "/assets/aistudio/DG_2_f5a24816.jpeg",
+      imageSrc: "assets/aistudio/DG_2_f5a24816.jpeg",
       alt: "Aparelho de ar-condicionado split instalado e revisado em ambiente climatizado",
       description: "Verificação da vazão de ar e climatização homogênea no espaço do cliente.",
       isRealPhoto: true
@@ -366,25 +389,25 @@ export const initialSiteConfig: SiteConfig = {
       id: "g-oficial-4",
       title: "Sistemas Split, Condensadoras e Cassete",
       category: "todos",
-      imageSrc: "/assets/aistudio/DG_4_80effcc8.jpeg",
-      alt: "Identidade visual da DG Climatização com aparelhos split, condensadora e cassete",
-      description: "Conforto, tecnologia e confiança para o seu ambiente residencial e predial.",
+      imageSrc: "assets/aistudio/CASSETE-4-VIAS-5-Copia_954a3529.jpg",
+      alt: "Aparelho de ar-condicionado Cassete de 4 vias instalado no teto em ambiente sofisticado",
+      description: "Instalação, revisão e manutenção de modelos Cassete 4 vias, Split Hi-Wall e condensadoras comerciais e residenciais.",
       isRealPhoto: true
     },
     {
       id: "g-deep-clean",
       title: "Higienização profunda com bolsa coletora",
       category: "higienizacao",
-      imageSrc: "/src/assets/images/hvac_deep_cleaning_1792518165270.jpg",
-      alt: "Limpeza técnica de evaporadora com capa protetora coletora de água",
-      description: "Procedimento seguro que remove as impurezas da serpentina sem derramar água no ambiente.",
+      imageSrc: "assets/aistudio/hvac_deep_cleaning_1792518165270_1f7636b7.jpg",
+      alt: "Técnico da DG Climatização realizando higienização da serpentina com bolsa coletora protetora e pulverizador",
+      description: "Procedimento seguro com bolsa coletora e produtos bactericidas homologados, removendo fungos e ácaros sem respingos no ambiente.",
       isRealPhoto: true
     },
     {
       id: "g-clean-fins",
       title: "Filtros e aletas desobstruídos",
       category: "higienizacao",
-      imageSrc: "/src/assets/images/hvac_clean_filter_coil_1792518166146.jpg",
+      imageSrc: "assets/images/hvac_clean_filter_coil_1792518166146.jpg",
       alt: "Filtro micro-mesh e serpentina de alumínio limpos e esterilizados",
       description: "Restabelecimento da vazão máxima de ar limpo e livre de microrganismos nocivos.",
       isRealPhoto: true

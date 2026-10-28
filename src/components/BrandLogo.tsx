@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSiteConfig } from '../context/SiteConfigContext';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 interface BrandLogoProps {
   className?: string;
@@ -19,7 +20,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <div className={`flex items-center gap-3 ${className}`}>
         <img
-          src={config.company.logoSrc}
+          src={resolveAssetUrl(config.company.logoSrc)}
           alt={config.company.name}
           className={`object-contain ${
             size === 'sm' ? 'h-8' : size === 'lg' ? 'h-14' : 'h-10'

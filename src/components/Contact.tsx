@@ -10,12 +10,15 @@ import {
   CheckCircle,
   AlertCircle,
   Copy,
-  ExternalLink
+  ExternalLink,
+  Instagram,
+  Facebook,
+  Youtube
 } from 'lucide-react';
 import { useSiteConfig } from '../context/SiteConfigContext';
 
 export const Contact: React.FC = () => {
-  const { config, getWhatsAppUrl, selectedServiceForQuote, setSelectedServiceForQuote, setIsConfigDrawerOpen } = useSiteConfig();
+  const { config, getWhatsAppUrl, selectedServiceForQuote, setSelectedServiceForQuote } = useSiteConfig();
 
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -91,8 +94,6 @@ export const Contact: React.FC = () => {
     const url = getWhatsAppUrl(text);
     if (url) {
       window.open(url, '_blank', 'noopener,noreferrer');
-    } else {
-      setIsConfigDrawerOpen(true);
     }
   };
 
@@ -397,28 +398,15 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 block">WhatsApp de Atendimento</span>
-                  {config.contact.isWhatsappConfigured ? (
-                    <a
-                      href={whatsappDirectUrl || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-bold text-white hover:text-emerald-400 transition-colors flex items-center gap-1.5"
-                    >
-                      <span>{config.contact.whatsappFormatted}</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
-                    </a>
-                  ) : (
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-xs text-amber-400/90 font-medium">Aguardando número oficial</span>
-                      <button
-                        type="button"
-                        onClick={() => setIsConfigDrawerOpen(true)}
-                        className="text-[11px] text-slate-400 hover:text-[#FFC928] underline underline-offset-2"
-                      >
-                        configurar
-                      </button>
-                    </div>
-                  )}
+                  <a
+                    href={whatsappDirectUrl || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-white hover:text-emerald-400 transition-colors flex items-center gap-1.5"
+                  >
+                    <span>{config.contact.whatsappFormatted}</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
+                  </a>
                 </div>
               </div>
 
@@ -429,35 +417,71 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 block">Contato Telefônico</span>
-                  {config.contact.isPhoneConfigured ? (
-                    <a
-                      href={`tel:${config.contact.phoneNumber}`}
-                      className="text-sm font-bold text-white hover:text-[#FFC928] transition-colors"
-                    >
-                      {config.contact.phoneFormatted}
-                    </a>
-                  ) : (
-                    <span className="text-xs text-slate-400">Canal direto via formulário ou WhatsApp</span>
-                  )}
+                  <a
+                    href={`tel:${config.contact.phoneNumber}`}
+                    className="text-sm font-bold text-white hover:text-[#FFC928] transition-colors"
+                  >
+                    {config.contact.phoneFormatted}
+                  </a>
                 </div>
               </div>
 
-              {/* E-mail */}
+              {/* E-mail Comercial */}
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-[#FFC928] shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs text-slate-400 block">E-mail Comercial</span>
-                  {config.contact.isEmailConfigured ? (
+                  <a
+                    href={`mailto:${config.contact.email}`}
+                    className="text-sm font-bold text-white hover:text-[#FFC928] transition-colors break-all"
+                  >
+                    {config.contact.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Redes Sociais Oficiais */}
+              <div className="pt-2 border-t border-slate-800 space-y-2.5">
+                <span className="text-xs font-semibold text-slate-300 block uppercase tracking-wider">
+                  Redes Sociais & Conteúdo
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {config.contact.social.instagramUrl && (
                     <a
-                      href={`mailto:${config.contact.email}`}
-                      className="text-sm font-bold text-white hover:text-[#FFC928] transition-colors break-all"
+                      href={config.contact.social.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-[#FFC928] flex items-center gap-2 text-xs text-slate-300 hover:text-white transition-colors"
                     >
-                      {config.contact.email}
+                      <Instagram className="w-4 h-4 text-[#FFC928] shrink-0" />
+                      <span className="truncate">Instagram</span>
                     </a>
-                  ) : (
-                    <span className="text-xs text-slate-400">Atendimento centralizado por mensagem</span>
+                  )}
+
+                  {config.contact.social.youtubeUrl && (
+                    <a
+                      href={config.contact.social.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-red-500 flex items-center gap-2 text-xs text-slate-300 hover:text-white transition-colors"
+                    >
+                      <Youtube className="w-4 h-4 text-red-500 shrink-0" />
+                      <span className="truncate">YouTube</span>
+                    </a>
+                  )}
+
+                  {config.contact.social.facebookUrl && (
+                    <a
+                      href={config.contact.social.facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-blue-500 flex items-center gap-2 text-xs text-slate-300 hover:text-white transition-colors"
+                    >
+                      <Facebook className="w-4 h-4 text-blue-500 shrink-0" />
+                      <span className="truncate">Facebook</span>
+                    </a>
                   )}
                 </div>
               </div>
@@ -470,7 +494,7 @@ export const Contact: React.FC = () => {
                 <div className="text-xs space-y-1">
                   <span className="text-slate-400 block font-medium">Horário de Operação</span>
                   <p className="text-slate-300">{config.contact.businessHours.weekdays}</p>
-                  <p className="text-slate-400">{config.contact.businessHours.saturday}</p>
+                  <p className="text-[#FFC928] font-semibold">{config.contact.businessHours.saturday}</p>
                   <p className="text-slate-500">{config.contact.businessHours.sunday}</p>
                 </div>
               </div>

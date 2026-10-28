@@ -3,6 +3,7 @@ import { Eye, X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { useSiteConfig } from '../context/SiteConfigContext';
 import { GalleryItem } from '../config/siteData';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 export const Gallery: React.FC = () => {
   const { config } = useSiteConfig();
@@ -107,7 +108,7 @@ export const Gallery: React.FC = () => {
             >
               <div className="aspect-[4/5] w-full overflow-hidden bg-slate-950 relative">
                 <img
-                  src={item.imageSrc}
+                  src={resolveAssetUrl(item.imageSrc)}
                   alt={item.alt}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -192,7 +193,7 @@ export const Gallery: React.FC = () => {
           >
             <div className="max-h-[75vh] w-full rounded-2xl overflow-hidden border border-slate-800 bg-black flex items-center justify-center shadow-2xl">
               <img
-                src={activeLightboxItem.imageSrc}
+                src={resolveAssetUrl(activeLightboxItem.imageSrc)}
                 alt={activeLightboxItem.alt}
                 referrerPolicy="no-referrer"
                 className="max-h-[75vh] w-auto max-w-full object-contain"

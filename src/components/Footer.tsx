@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ShieldCheck, MessageCircle, Phone, Mail, MapPin, X, ArrowUp } from 'lucide-react';
+import { ShieldCheck, MessageCircle, Phone, Mail, MapPin, X, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { useSiteConfig } from '../context/SiteConfigContext';
 
 export const Footer: React.FC = () => {
-  const { config, getWhatsAppUrl, setIsConfigDrawerOpen } = useSiteConfig();
+  const { config, getWhatsAppUrl } = useSiteConfig();
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
   const currentYear = new Date().getFullYear();
@@ -46,14 +46,64 @@ export const Footer: React.FC = () => {
               manutenção profissional e compromisso com o seu conforto térmico e a qualidade do ar.
             </p>
 
+            {/* Redes Sociais Oficiais */}
             <div className="pt-2">
-              <button
-                type="button"
-                onClick={() => setIsConfigDrawerOpen(true)}
-                className="text-xs text-slate-400 hover:text-[#FFC928] underline underline-offset-4"
-              >
-                Personalizar contatos & fotos
-              </button>
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-3">
+                Siga Nossos Canais
+              </span>
+              <div className="flex items-center gap-3">
+                {config.contact.social.instagramUrl && (
+                  <a
+                    href={config.contact.social.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#FFC928] flex items-center justify-center text-slate-400 hover:text-[#FFC928] hover:bg-slate-800/60 transition-all"
+                    title="Instagram oficial DG Climatização"
+                    aria-label="Instagram DG Climatização"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                )}
+
+                {config.contact.social.youtubeUrl && (
+                  <a
+                    href={config.contact.social.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-red-500 flex items-center justify-center text-slate-400 hover:text-red-500 hover:bg-slate-800/60 transition-all"
+                    title="Canal oficial no YouTube da DG Climatização"
+                    aria-label="YouTube DG Climatização"
+                  >
+                    <Youtube className="w-4 h-4" />
+                  </a>
+                )}
+
+                {config.contact.social.facebookUrl && (
+                  <a
+                    href={config.contact.social.facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:bg-slate-800/60 transition-all"
+                    title="Página oficial no Facebook da DG Climatização"
+                    aria-label="Facebook DG Climatização"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                )}
+
+                {whatsappUrl && (
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:bg-slate-800/60 transition-all"
+                    title="WhatsApp oficial DG Climatização"
+                    aria-label="WhatsApp DG Climatização"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
 
@@ -117,14 +167,25 @@ export const Footer: React.FC = () => {
                 className="inline-flex items-center gap-2 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Oficial</span>
+                <span>(21) 97905-6031</span>
               </a>
             )}
 
-            <div className="text-xs text-slate-400 space-y-1 pt-1">
+            {config.contact.email && (
+              <a
+                href={`mailto:${config.contact.email}`}
+                className="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-[#FFC928] transition-colors break-all"
+              >
+                <Mail className="w-4 h-4 shrink-0 text-[#FFC928]" />
+                <span>{config.contact.email}</span>
+              </a>
+            )}
+
+            <div className="text-xs text-slate-400 space-y-1 pt-2">
               <span className="text-slate-300 block font-medium">Horário</span>
               <p>Segunda a Sexta: 08h às 18h</p>
-              <p>Sábados: 08h às 13h</p>
+              <p className="text-white font-medium">Sábados: 08h às 15h</p>
+              <p className="text-slate-500">Rio de Janeiro - RJ</p>
             </div>
           </div>
 

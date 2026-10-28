@@ -1,6 +1,6 @@
-import React from 'react';
 import { ArrowRight, Sparkles, MessageCircle, ShieldCheck, Wrench, Clock, CheckCircle } from 'lucide-react';
 import { useSiteConfig } from '../context/SiteConfigContext';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 export const Hero: React.FC = () => {
   const { config, getWhatsAppUrl } = useSiteConfig();
@@ -131,34 +131,23 @@ export const Hero: React.FC = () => {
               {/* Moldura estrutural de alta fidelidade */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-700/60 bg-slate-900/60 shadow-2xl shadow-black/60 group">
                 
-                {/* Imagem Principal */}
-                <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden bg-slate-950 relative">
+                {/* Imagem Principal DG 3 */}
+                <div className="aspect-[9/14] sm:aspect-[4/5] lg:aspect-[9/14] w-full overflow-hidden bg-slate-950 relative flex items-center justify-center">
                   <img
-                    src={config.hero.imageSrc}
+                    src={resolveAssetUrl(config.hero.imageSrc)}
                     alt={config.hero.imageAlt}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                     loading="eager"
                   />
-                  {/* Gradiente sutil para reforço visual de contraste */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#101820]/90 via-transparent to-transparent opacity-70" />
+                  {/* Gradiente sutil nas bordas sem cobrir o rodapé da foto */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101820]/60 via-transparent to-transparent opacity-50 pointer-events-none" />
                 </div>
 
-                {/* Card de Legenda Técnica Sobreposta de Alta Elegância */}
-                <div className="absolute bottom-4 inset-x-4 p-3.5 bg-[#101820]/90 backdrop-blur-md rounded-xl border border-slate-700/60 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#FFC928]/15 border border-[#FFC928]/30 flex items-center justify-center text-[#FFC928] shrink-0">
-                      <Wrench className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-white">Equipe Técnica Capacitada</span>
-                      <span className="text-[11px] text-slate-300">Inspeção minuciosa e precisão operacional</span>
-                    </div>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <span className="text-[10px] uppercase font-semibold text-[#FFC928] tracking-wider block">Padrão DG</span>
-                    <span className="text-[11px] text-slate-400">100% Cuidado</span>
-                  </div>
+                {/* Selo sutil no topo do card */}
+                <div className="absolute top-3 right-3 px-3 py-1.5 bg-[#101820]/90 backdrop-blur-md rounded-lg border border-slate-700/80 shadow-lg flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider">Atendimento Oficial</span>
                 </div>
               </div>
 

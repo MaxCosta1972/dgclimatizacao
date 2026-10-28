@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Sparkles, MoveHorizontal } from 'lucide-react';
 import { useSiteConfig } from '../context/SiteConfigContext';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 export const BeforeAfterSlider: React.FC = () => {
   const { config } = useSiteConfig();
@@ -71,7 +72,7 @@ export const BeforeAfterSlider: React.FC = () => {
           >
             {/* Imagem "Depois" (base completa) */}
             <img
-              src={config.beforeAfter.afterImage}
+              src={resolveAssetUrl(config.beforeAfter.afterImage)}
               alt={config.beforeAfter.afterAlt}
               referrerPolicy="no-referrer"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -88,7 +89,7 @@ export const BeforeAfterSlider: React.FC = () => {
               style={{ width: `${sliderPosition}%` }}
             >
               <img
-                src={config.beforeAfter.beforeImage}
+                src={resolveAssetUrl(config.beforeAfter.beforeImage)}
                 alt={config.beforeAfter.beforeAlt}
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover max-w-none"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Sparkles, FileText, CheckCircle2 } from 'lucide-react';
 import { useSiteConfig } from '../context/SiteConfigContext';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 export const About: React.FC = () => {
   const { config } = useSiteConfig();
@@ -15,15 +16,15 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl">
-                <div className="aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden relative">
+                <div className="aspect-[9/14] sm:aspect-[9/13] lg:aspect-[9/14] w-full overflow-hidden relative">
                   <img
-                    src={config.about.imageSrc}
+                    src={resolveAssetUrl(config.about.imageSrc)}
                     alt={config.about.imageAlt}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#101820]/80 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#101820]/80 via-transparent to-transparent opacity-40 pointer-events-none" />
                 </div>
 
                 <div className="p-5 bg-slate-900/90 border-t border-slate-800">

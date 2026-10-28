@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, SlidersHorizontal, PhoneCall } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { useSiteConfig } from '../context/SiteConfigContext';
 
 export const Navbar: React.FC = () => {
-  const { config, getWhatsAppUrl, setIsConfigDrawerOpen } = useSiteConfig();
+  const { config, getWhatsAppUrl } = useSiteConfig();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -81,28 +81,17 @@ export const Navbar: React.FC = () => {
 
             {/* Zone 3: Primary Action & Direct Contact */}
             <div className="hidden sm:flex items-center gap-3 shrink-0">
-              {/* Painel de Fotos & Configurações da Empresa (requisito seção 5 e 12) */}
-              <button
-                type="button"
-                onClick={() => setIsConfigDrawerOpen(true)}
-                className="p-2 text-xs font-medium text-slate-400 hover:text-white bg-slate-800/70 hover:bg-slate-800 rounded-lg border border-slate-700/60 transition-colors flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFC928]"
-                title="Configurar fotos reais, WhatsApp e dados da empresa"
-                aria-label="Gerenciador de Fotos e Informações"
-              >
-                <SlidersHorizontal className="w-3.5 h-3.5 text-[#FFC928]" />
-                <span className="hidden xl:inline text-[11px]">Gerenciar Fotos & Dados</span>
-              </button>
-
               {whatsappUrl ? (
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-slate-300 hover:text-[#25D366] bg-slate-800/60 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition-colors flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+                  className="px-3 py-2 text-xs font-semibold text-emerald-400 hover:text-white bg-emerald-950/40 hover:bg-emerald-900/60 rounded-lg border border-emerald-500/30 transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
                   title="Conversar pelo WhatsApp"
                   aria-label="WhatsApp Oficial"
                 >
                   <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span className="hidden xl:inline">WhatsApp</span>
                 </a>
               ) : null}
 
@@ -117,16 +106,6 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Hamburger Toggle */}
             <div className="flex items-center gap-2 lg:hidden">
-              <button
-                type="button"
-                onClick={() => setIsConfigDrawerOpen(true)}
-                className="p-2 text-slate-400 hover:text-white bg-slate-800/80 rounded-lg border border-slate-700/50"
-                title="Configurar fotos e contatos"
-                aria-label="Configurações"
-              >
-                <SlidersHorizontal className="w-4 h-4 text-[#FFC928]" />
-              </button>
-
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -203,18 +182,6 @@ export const Navbar: React.FC = () => {
                   Atendimento WhatsApp
                 </a>
               )}
-
-              <button
-                type="button"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsConfigDrawerOpen(true);
-                }}
-                className="text-xs text-center text-slate-400 hover:text-[#FFC928] py-2 flex items-center justify-center gap-1.5"
-              >
-                <SlidersHorizontal className="w-3.5 h-3.5" />
-                <span>Gerenciar Fotos & Dados do Site</span>
-              </button>
             </div>
           </div>
         </div>
