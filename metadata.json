@@ -1,6 +1,0 @@
-{
-  "name": "DG Climatização",
-  "description": "Manutenção preventiva, corretiva e higienização especializada de ar-condicionado. Conforto térmico, qualidade do ar e eficiência para residências e empresas.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
