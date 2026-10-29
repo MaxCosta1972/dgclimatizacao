@@ -1,80 +1,1756 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DG Climatização | Manutenção Especializada de Ar-Condicionado</title>
-    <meta name="description" content="Manutenção preventiva, corretiva e higienização especializada de ar-condicionado. Conforto térmico, qualidade do ar e eficiência para residências e empresas." />
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Automotivo - Gestão Completa de Veículos e Despesas</title>
+    <meta name="description" content="O aplicativo definitivo para controlar abastecimentos, consumo (km/L), manutenções preventivas e despesas do seu carro ou moto. Sem mensalidades!">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="DG Climatização | Manutenção Especializada de Ar-Condicionado" />
-    <meta property="og:description" content="Manutenção preventiva, corretiva e higienização especializada de ar-condicionado. Conforto térmico, qualidade do ar e eficiência para residências e empresas." />
-    <meta property="og:site_name" content="DG Climatização" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icone_app_512x512.png">
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DG Climatização | Manutenção Especializada de Ar-Condicionado" />
-    <meta name="twitter:description" content="Manutenção preventiva, corretiva e higienização especializada de ar-condicionado. Conforto térmico, qualidade do ar e eficiência para residências e empresas." />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        accent: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        dark: {
+                            900: '#0B0F19',
+                            800: '#111827',
+                            700: '#1F2937',
+                            600: '#374151'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
-    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HVACBusiness",
-      "name": "DG Climatização",
-      "description": "Manutenção preventiva, corretiva e higienização especializada de aparelhos de ar-condicionado.",
-      "url": "https://dgclimatizacao.com.br",
-      "priceRange": "$$",
-      "currenciesAccepted": "BRL",
-      "paymentAccepted": "Pix, Cartão de Crédito, Boleto, Dinheiro",
-      "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-15:00",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Serviços de Climatização",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Manutenção Preventiva de Ar-Condicionado"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Manutenção Corretiva e Diagnóstico"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Limpeza e Higienização Profunda"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Inspeção Técnica de Desempenho"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-    <script type="module" crossorigin src="./assets/index-f3J7D-gH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BM_mrvZs.css">
-  </head>
-  <body class="bg-[#101820] text-slate-100 antialiased selection:bg-[#FFC928] selection:text-[#101820]">
-    <div id="root"></div>
-  </body>
-</html>
+    <!-- QR Code Generator Lib -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F19;
+            color: #F3F4F6;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 40px -10px rgba(14, 165, 233, 0.25);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#0B0F19] text-gray-100 antialiased min-h-screen relative overflow-x-hidden">
+
+    <!-- Top Banner Promocional -->
+    <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 shadow-lg">
+        <span class="inline-block animate-pulse">🔥</span>
+        <span>PROMOÇÃO DE LANÇAMENTO DIRETO: 60% DE DESCONTO + ACESSO VITALÍCIO SEM MENSALIDADE</span>
+        <span class="hidden md:inline bg-black/20 px-2 py-0.5 rounded text-xs">Pague 1x e use para sempre</span>
+    </div>
+
+    <!-- Navegação -->
+    <header class="sticky top-0 z-40 bg-[#0B0F19]/90 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="assets/icone_app_512x512.png" alt="Logo Gerenciador Automotivo" class="w-11 h-11 rounded-xl shadow-md border border-emerald-500/30 object-cover">
+                <div>
+                    <span class="text-xl font-bold font-heading text-white tracking-tight flex items-center gap-1.5">
+                        Gerenciador <span class="text-emerald-400">Automotivo</span>
+                    </span>
+                    <span class="text-[11px] block text-gray-400 font-medium">Gestão Inteligente de Veículos</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#recursos" class="hover:text-emerald-400 transition-colors">Recursos</a>
+                <a href="#prints" class="hover:text-emerald-400 transition-colors">Telas do App</a>
+                <a href="#seguranca" class="hover:text-emerald-400 transition-colors">Segurança</a>
+                <a href="#como-instalar" class="hover:text-emerald-400 transition-colors">Como Instalar</a>
+                <a href="#faq" class="hover:text-emerald-400 transition-colors">Dúvidas</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#comprar" class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-gray-950 font-bold px-4 sm:px-6 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 text-sm flex items-center gap-2 transition-all transform hover:scale-[1.02]">
+                    <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
+                    <span>Comprar por R$ 19,90</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <!-- Luzes de fundo -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-cyan-500/10 blur-[110px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-wide shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>LICENÇA VITALÍCIA • PAGAMENTO ÚNICO • SEM MENSALIDADE</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+                        Tenha o Controle Total do Seu Carro ou Moto <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">na Palma da Mão</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Acabe com as surpresas e o desperdício de combustível. Monitore médias de consumo (km/L), manutenções preventivas, troca de óleo, despesas e impostos em um único aplicativo rápido, seguro e que funciona 100% offline.
+                    </p>
+
+                    <!-- Lista de Vantagens Rápidas -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 pb-4 text-left max-w-xl mx-auto lg:mx-0">
+                        <div class="flex items-center gap-2.5 text-gray-200 text-sm">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>Cálculo automático de km por litro</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-gray-200 text-sm">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>Alertas de revisão e troca de óleo</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-gray-200 text-sm">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>Controle de múltiplos carros e motos</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-gray-200 text-sm">
+                            <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <span>100% dos dados salvos no seu celular</span>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação Hero -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#comprar" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 hover:to-teal-300 text-gray-950 text-base font-extrabold rounded-2xl shadow-xl shadow-emerald-500/30 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5">
+                            <i data-lucide="download" class="w-5 h-5 stroke-[2.5]"></i>
+                            <span>QUERO BAIXAR AGORA - R$ 19,90</span>
+                        </a>
+                        <a href="#recursos" class="w-full sm:w-auto px-6 py-4 bg-gray-800/80 hover:bg-gray-700/80 text-gray-200 font-semibold rounded-2xl border border-gray-700 flex items-center justify-center gap-2 transition">
+                            <i data-lucide="eye" class="w-5 h-5 text-gray-400"></i>
+                            <span>Ver Como Funciona</span>
+                        </a>
+                    </div>
+
+                    <!-- Garantia e Formas de Pagamento -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Garantia Incondicional de 7 Dias</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="qr-code" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Liberação Imediata via Pix</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Compatível com qualquer Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lado Direito: Mockup do App -->
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                        <div class="relative rounded-3xl bg-gray-900 border-4 border-gray-800 shadow-2xl overflow-hidden p-2">
+                            <img src="assets/banner_destaque_1024x500.png" alt="Banner Gerenciador Automotivo" class="w-full rounded-2xl shadow-inner object-cover">
+                            <div class="p-4 bg-gray-950/90 mt-2 rounded-2xl border border-gray-800/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
+                                    <span class="text-xs font-semibold text-gray-300">Versão 1.0.2 Oficial</span>
+                                </div>
+                                <span class="text-xs text-emerald-400 font-bold bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/20">Instalador .APK 16 MB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAIXA DE PROBLEMAS & SOLUÇÃO -->
+    <section class="py-12 bg-gray-900/60 border-y border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 border border-red-500/20">
+                        <i data-lucide="fuel" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-base mb-1">Combustível Adulterado ou Alto Consumo?</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Descubra na hora qual posto de combustível faz seu carro rodar mais quilômetros por litro e economize em cada abastecida.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-base mb-1">Prejuízo com Quebra Mecânica Inesperada?</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Trocar uma correia ou o óleo a tempo custa pouco. Deixar quebrar pode custar milhares de reais. O app te avisa antes do vencimento!</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+                        <i data-lucide="wallet" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-base mb-1">Adeus Planilhas e Caderninhos</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Chega de guardar notas fiscais amassadas no porta-luvas. Cadastre em 10 segundos no celular e tenha relatórios automáticos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RECURSOS DO APLICATIVO -->
+    <section id="recursos" class="py-20 md:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-emerald-400 font-semibold tracking-wider text-xs uppercase bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-500/20">Tudo em um só lugar</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Recursos Poderosos Feitos para Facilitar a Sua Vida</h2>
+                <p class="text-gray-400 text-base">Projetado com a tecnologia mais moderna do Android (Jetpack Compose e Material Design 3) para uma experiência rápida, limpa e sem travamentos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+                        <i data-lucide="gauge" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Controle de Abastecimento & Médias (km/L)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Monitore cada centavo e cada quilômetro! Registre pelo odômetro parcial (trip) ou pelo odômetro total. O sistema calcula na hora o consumo exato em km/L e inclui uma Calculadora Flex inteligente (Álcool vs Gasolina pela regra dos 70%).
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Cálculo exato por odômetro parcial ou odômetro total</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Calculadora Flex com indicação imediata de economia</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Histórico detalhado por posto e tipo de combustível</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6">
+                        <i data-lucide="file-text" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Manutenções & Dossiê em PDF</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Monitore o desgaste de cada peça e emita com um toque o <strong>Dossiê do Veículo em PDF</strong> (padrão A4) com placa oficial Mercosul, dados do proprietário, índice de saúde e histórico detalhado para valorizar na revenda ou enviar pelo WhatsApp!
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Alertas de óleo, filtros, freios e pneus</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Emissão de Dossiê PDF e Laudo Técnico Oficial</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Compartilhamento instantâneo via WhatsApp</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-6">
+                        <i data-lucide="pie-chart" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Despesas Gerais & Impostos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Tenha a soma exata de tudo o que você gasta no mês e no ano: IPVA, Licenciamento, Seguro, Estacionamento, Pedágios, Lava-Rápido, Acessórios e Multas.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Relatórios financeiros com gráficos intuitivos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Categorização inteligente de gastos</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-6">
+                        <i data-lucide="car" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gestão Multiveículos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Cadastre quantos veículos quiser! Alterne com um simples toque entre o carro da família, a moto do dia a dia ou os veículos da sua empresa/frota.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Carros, motos, vans e utilitários</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Painéis e médias individuais por veículo</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+                        <i data-lucide="wifi-off" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Funciona 100% Offline</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Viajou para o interior ou está sem sinal no posto da rodovia? Não tem problema: o Gerenciador Automotivo funciona perfeitamente sem internet em qualquer lugar.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Zero consumo do seu plano de dados 4G/5G</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Abertura ultrarrápida e resposta instantânea</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Privacidade & Backup Local</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Suas informações financeiras e de rotina são privadas. Nenhum dado é vendido ou enviado para servidores de terceiros. Você é o único dono dos seus dados.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Totalmente em conformidade com a LGPD</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Sem anúncios chatos pulando na sua tela</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TELAS DO APP (CARROSSEL INTERATIVO COM AS 8 TELAS NA SEQUÊNCIA EXATA) -->
+    <section id="prints" class="py-20 bg-gray-900/50 border-y border-gray-800/80 relative overflow-hidden">
+        <!-- Luz de fundo -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="text-cyan-400 font-semibold tracking-wider text-xs uppercase bg-cyan-950/80 px-3.5 py-1.5 rounded-full border border-cyan-500/30 inline-flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="layers" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    <span>Telas Reais do Aplicativo (1 a 8)</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Veja o Aplicativo em Funcionamento Real</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    Conheça a interface completa do Gerenciador Automotivo na sequência exata de uso: desde o acesso com biometria até a localização no mapa do seu mecânico de confiança.
+                </p>
+            </div>
+
+            <!-- NAVEGADOR DE ABAS / MINIATURAS (SELEÇÃO RÁPIDA 1 A 8) -->
+            <div id="carouselTabsBar" class="flex items-center justify-start md:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar scroll-smooth">
+                <button onclick="irParaSlide(0)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-emerald-500/40 bg-emerald-500/20 text-emerald-300" data-slide="0">
+                    1. Login & Biometria
+                </button>
+                <button onclick="irParaSlide(1)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="1">
+                    2. Painel Principal
+                </button>
+                <button onclick="irParaSlide(2)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="2">
+                    3. Autonomia & Gráficos
+                </button>
+                <button onclick="irParaSlide(3)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="3">
+                    4. Saúde do Veículo
+                </button>
+                <button onclick="irParaSlide(4)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="4">
+                    5. Métrica Detalhada
+                </button>
+                <button onclick="irParaSlide(5)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="5">
+                    6. Linha do Tempo
+                </button>
+                <button onclick="irParaSlide(6)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="6">
+                    7. Buscar Carro
+                </button>
+                <button onclick="irParaSlide(7)" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200" data-slide="7">
+                    8. Perfil & Mecânico
+                </button>
+            </div>
+
+            <!-- CONTAINER CENTRAL DO CARROSSEL -->
+            <div id="carouselWrapper" class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-gray-950/70 p-4 sm:p-8 rounded-3xl border border-gray-800 shadow-2xl relative">
+                
+                <!-- Coluna da Esquerda: Mockup do Smartphone com o Slide Ativo -->
+                <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+                    
+                    <!-- Botões Laterais Flutuantes (Mobile e Desktop) -->
+                    <button onclick="mudarSlide(-1)" class="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-gray-900/90 hover:bg-emerald-500 hover:text-gray-950 text-white border border-gray-700 shadow-xl flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" title="Tela Anterior">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    
+                    <button onclick="mudarSlide(1)" class="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-gray-900/90 hover:bg-emerald-500 hover:text-gray-950 text-white border border-gray-700 shadow-xl flex items-center justify-center transition-all transform hover:scale-110 active:scale-95" title="Próxima Tela">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <!-- MOLDURA REALISTA DE SMARTPHONE -->
+                    <div class="relative w-[280px] sm:w-[310px] rounded-[2.5rem] bg-gray-900 p-3 shadow-2xl border-4 border-gray-800 ring-1 ring-white/10 glow-cyan transition-all duration-300">
+                        <!-- Câmera Punch-Hole Superior -->
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black/90 border border-gray-700 z-20 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 rounded-full bg-cyan-900/60"></div>
+                        </div>
+
+                        <!-- Tela do Celular com Overflow Hidden -->
+                        <div id="phoneScreenContainer" class="relative rounded-[2rem] overflow-hidden bg-black aspect-[9/19.5] shadow-inner flex items-center justify-center group cursor-pointer" onclick="abrirZoomAtual()">
+                            
+                            <!-- SLIDE 1 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-100" data-index="0">
+                                <img src="assets/Tela 1.jpg" alt="Tela 1 - Login & Biometria" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_1_abastecimento.png';">
+                            </div>
+
+                            <!-- SLIDE 2 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="1">
+                                <img src="assets/Tela 2.jpg" alt="Tela 2 - Painel Principal & Autonomia" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_1_abastecimento.png';">
+                            </div>
+
+                            <!-- SLIDE 3 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="2">
+                                <img src="assets/Tela 3.jpg" alt="Tela 3 - Gráfico de Autonomia & Desgaste" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_2_manutencao.png';">
+                            </div>
+
+                            <!-- SLIDE 4 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="3">
+                                <img src="assets/Tela 4.jpg" alt="Tela 4 - Saúde do Veículo & Serviços" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_2_manutencao.png';">
+                            </div>
+
+                            <!-- SLIDE 5 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="4">
+                                <img src="assets/Tela 5.jpg" alt="Tela 5 - Métrica Detalhada & Status" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_2_manutencao.png';">
+                            </div>
+
+                            <!-- SLIDE 6 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="5">
+                                <img src="assets/Tela 6.jpg" alt="Tela 6 - Linha do Tempo & Histórico" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_2_manutencao.png';">
+                            </div>
+
+                            <!-- SLIDE 7 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="6">
+                                <img src="assets/Tela 7.jpg" alt="Tela 7 - Buscar Carro por Placa" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_1_abastecimento.png';">
+                            </div>
+
+                            <!-- SLIDE 8 -->
+                            <div class="carousel-slide w-full h-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none" data-index="7">
+                                <img src="assets/Tela 8.jpg" alt="Tela 8 - Perfil & Mecânico" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='assets/screenshot_1_abastecimento.png';">
+                            </div>
+
+                            <!-- Overlay de Lupa / Zoom no Hover -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold backdrop-blur-[2px]">
+                                <i data-lucide="zoom-in" class="w-5 h-5 text-emerald-400"></i>
+                                <span>Clique para Ampliar</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Indicador de Zoom em Baixo do Mockup -->
+                    <button onclick="abrirZoomAtual()" class="mt-4 text-xs text-gray-400 hover:text-emerald-400 flex items-center gap-1.5 transition">
+                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                        <span>Ver tela cheia em alta resolução</span>
+                    </button>
+                </div>
+
+                <!-- Coluna da Direita: Detalhamento da Tela Selecionada -->
+                <div class="lg:col-span-6 space-y-6">
+                    
+                    <!-- Contador e Status -->
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+                        <div class="flex items-center gap-2">
+                            <span id="slideTagBadge" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                Tela 1 de 8
+                            </span>
+                            <span id="slideCategory" class="text-xs text-gray-400 font-medium">Segurança & Acesso</span>
+                        </div>
+                        <div class="text-xs text-gray-500 font-mono font-semibold">
+                            <span id="currentSlideDisplay" class="text-emerald-400 text-sm font-bold">1</span> / 8
+                        </div>
+                    </div>
+
+                    <!-- Título e Descrição Dinâmica -->
+                    <div class="space-y-3 min-h-[140px]">
+                        <h3 id="slideTitle" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                            Login Seguro & Biometria em 1 Toque
+                        </h3>
+                        <p id="slideDesc" class="text-gray-300 text-sm leading-relaxed">
+                            Faça login com facilidade através de e-mail e senha ou use o sensor biométrico (impressão digital) para acesso rápido. Seus dados de combustível e histórico mecânico ficam 100% protegidos no seu aparelho.
+                        </p>
+                    </div>
+
+                    <!-- Destaques / Pontos Chave da Tela Atual -->
+                    <div id="slideHighlights" class="space-y-2.5 bg-gray-900/90 p-4 rounded-2xl border border-gray-800 text-xs">
+                        <div class="flex items-center gap-2 text-gray-200">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span id="hl1">Entrada com impressão digital ou senha</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-200">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span id="hl2">Acesso seguro e sem compartilhamento externo</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-200">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                            <span id="hl3">Interface escura que protege a visão à noite</span>
+                        </div>
+                    </div>
+
+                    <!-- Navegação por Bolinhas (Dots) e Botões de Controle -->
+                    <div class="flex items-center justify-between pt-2">
+                        <div class="flex items-center gap-2" id="carouselDots">
+                            <button onclick="irParaSlide(0)" class="w-3 h-3 rounded-full transition-all bg-emerald-400 scale-125" title="Tela 1"></button>
+                            <button onclick="irParaSlide(1)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 2"></button>
+                            <button onclick="irParaSlide(2)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 3"></button>
+                            <button onclick="irParaSlide(3)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 4"></button>
+                            <button onclick="irParaSlide(4)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 5"></button>
+                            <button onclick="irParaSlide(5)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 6"></button>
+                            <button onclick="irParaSlide(6)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 7"></button>
+                            <button onclick="irParaSlide(7)" class="w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500" title="Tela 8"></button>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button onclick="mudarSlide(-1)" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold rounded-xl border border-gray-700 flex items-center gap-1.5 transition">
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Anterior
+                            </button>
+                            <button onclick="mudarSlide(1)" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-gray-950 text-xs font-bold rounded-xl flex items-center gap-1.5 shadow-md transition">
+                                Próxima <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botão Direto para Baixar / Comprar -->
+                    <div class="pt-2">
+                        <a href="#comprar" class="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-gray-950 font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition transform hover:scale-[1.01]">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <span>Gostou? Adquira o App Completo por R$ 19,90</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE ZOOM EM ALTA RESOLUÇÃO -->
+    <div id="modalZoom" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-md w-full flex flex-col items-center">
+            <button onclick="fecharZoom()" class="absolute -top-12 right-0 text-white hover:text-emerald-400 p-2 rounded-full bg-gray-800/80 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="rounded-3xl overflow-hidden border-2 border-gray-700 shadow-2xl bg-black max-h-[85vh]">
+                <img id="zoomImage" src="" alt="Tela Ampliada" class="max-h-[85vh] w-auto object-contain">
+            </div>
+            <div id="zoomTitle" class="text-white text-xs font-semibold mt-3 text-center"></div>
+        </div>
+    </div>
+
+    <!-- PROVA SOCIAL / DEPOIMENTOS -->
+    <section class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-amber-400 font-semibold tracking-wider text-xs uppercase bg-amber-950/70 px-3 py-1 rounded-full border border-amber-500/20">Quem usa, recomenda</span>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">O que dizem os motoristas que já utilizam</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass-card p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic leading-relaxed">
+                        "Trabalho 10 horas por dia no volante como Uber. Antes eu nunca sabia ao certo quanto sobrava líquido por causa da gasolina. Esse app me mostrou exatamente qual posto da minha cidade tinha combustível que rendia mais. Já paguei o valor do app 100 vezes!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-emerald-600/30 text-emerald-400 flex items-center justify-center font-bold text-sm">MS</div>
+                        <div>
+                            <div class="text-white font-semibold text-xs">Marcos Silva</div>
+                            <div class="text-gray-400 text-[11px]">Motorista de Aplicativo • São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic leading-relaxed">
+                        "O melhor de tudo é não ter que pagar mensalidade todo mês como outros apps que cobram R$ 20 por mês. Paguei uma vez só no Pix e o app é meu para sempre. O lembrete de troca de óleo me salvou semana passada!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-cyan-600/30 text-cyan-400 flex items-center justify-center font-bold text-sm">RT</div>
+                        <div>
+                            <div class="text-white font-semibold text-xs">Rodrigo Tavares</div>
+                            <div class="text-gray-400 text-[11px]">Proprietário de Carro e Moto • Curitiba</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 text-sm italic leading-relaxed">
+                        "Instalação super rápida e não tem propaganda chata. Funciona liso mesmo sem sinal na estrada. Parabéns pelo sistema, recomendo de olhos fechados para quem quer cuidar do carro."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-purple-600/30 text-purple-400 flex items-center justify-center font-bold text-sm">CE</div>
+                        <div>
+                            <div class="text-white font-semibold text-xs">Carlos Eduardo F.</div>
+                            <div class="text-gray-400 text-[11px]">Vendedor Viajante • Belo Horizonte</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO INSTALAR NO ANDROID -->
+    <!-- POR QUE INSTALAÇÃO FORA DA PLAY STORE? (TRANSPARÊNCIA E VANTAGENS) -->
+    <section class="py-20 bg-gray-900/40 border-t border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-emerald-400 font-semibold tracking-wider text-xs uppercase bg-emerald-950/70 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
+                    Transparência e Respeito ao Seu Bolso
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Por Que Baixar Direto (.APK) Fora da Google Play Store?
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Entenda como a venda direta do desenvolvedor elimina taxas abusivas de grandes corporações e entrega um software de alta qualidade por um preço acessível e sem mensalidades.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 hover:border-emerald-500/40 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                        <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Economia Real de R$ 30,00</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        A Google Play retém de <b>15% a 30% de comissão</b> em dólares sobre cada venda, além de taxas anuais de distribuição. Para estar na loja, o app precisaria custar R$ 49,90 ou cobrar mensalidades recorrentes. Vendendo direto para você, repassamos 100% dessa economia por apenas <b>R$ 19,90 vitalício</b>.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 hover:border-cyan-500/40 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Privacidade e Zero Rastreamento</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Aplicativos na loja costumam exigir vinculação com a conta Google e serviços que coletam hábitos de navegação. Nosso app é <b>100% autônomo e offline</b>: seus dados de combustível, gastos e mecânicos ficam salvos <b>apenas no seu próprio aparelho</b>.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 hover:border-amber-500/40 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="package-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">O Formato Oficial do Android (.APK)</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        O arquivo <b>.APK</b> (Android Application Package) é exatamente o formato padrão que o próprio sistema operacional Android utiliza para instalar qualquer aplicativo. A instalação direta (chamada de <i>sideloading</i>) é um recurso oficial criado pelo Google para garantir a liberdade de escolha do usuário.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 hover:border-purple-500/40 transition-all space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                        <i data-lucide="message-square-heart" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Atendimento Humano no WhatsApp</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Em vez de robôs, filas de espera ou formulários sem resposta, você tem <b>canal direto no WhatsApp com o desenvolvedor do app</b> (Márcio). Qualquer dúvida sobre a instalação ou ativação é solucionada diretamente com quem criou o sistema.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIA PASSO A PASSO DE INSTALAÇÃO NO ANDROID -->
+    <section id="como-instalar" class="py-20 bg-gray-900/60 border-y border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-emerald-400 font-semibold tracking-wider text-xs uppercase bg-emerald-950/70 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
+                    Instalação Simples e Rápida em Menos de 2 Minutos
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Passo a Passo Oficial para Instalar no Seu Celular
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Siga o roteiro abaixo. É muito fácil e funciona em celulares <b>Samsung Galaxy, Motorola, Xiaomi/Redmi, Realme, LG</b> e qualquer smartphone Android.
+                </p>
+            </div>
+
+            <!-- OS 5 PASSOS ILUSTRADOS -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-6">
+                
+                <!-- Passo 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 flex flex-col justify-between relative overflow-hidden group hover:border-emerald-500/40 transition">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-gray-950 font-black text-sm flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                            1
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Baixe o Arquivo</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Toque no botão <b>"Baixar Aplicativo (.APK)"</b> abaixo. O download do arquivo <b>GerenciadorAutomotivo.apk</b> (16 MB) começará imediatamente.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/60 text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Seguro (16 MB)
+                    </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 flex flex-col justify-between relative overflow-hidden group hover:border-cyan-500/40 transition">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-cyan-500 text-gray-950 font-black text-sm flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                            2
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Confirme o Download</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Se o navegador (Chrome ou Samsung) exibir o aviso <i>"O arquivo pode ser nocivo"</i>, toque em <b>"Fazer download mesmo assim"</b>.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/60 text-[11px] text-cyan-400 font-semibold flex items-center gap-1">
+                        <i data-lucide="info" class="w-3.5 h-3.5"></i> Aviso Padrão do Android
+                    </div>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 flex flex-col justify-between relative overflow-hidden group hover:border-amber-500/40 transition">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-amber-500 text-gray-950 font-black text-sm flex items-center justify-center shadow-lg shadow-amber-500/20">
+                            3
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Permitir Desta Fonte</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Ao abrir o arquivo, se o sistema pedir autorização, toque em <b>Configurações</b>, ative a chavinha <b>"Permitir desta fonte"</b> e volte.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/60 text-[11px] text-amber-400 font-semibold flex items-center gap-1">
+                        <i data-lucide="toggle-right" class="w-3.5 h-3.5"></i> 1 Toque nas Configurações
+                    </div>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-gray-800 flex flex-col justify-between relative overflow-hidden group hover:border-emerald-500/40 transition">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-gray-950 font-black text-sm flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                            4
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Toque em Instalar</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">
+                            Toque no botão <b>Instalar</b>. Em cerca de 3 segundos a instalação conclui. Toque em <b>Abrir</b> para iniciar o aplicativo.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/60 text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                        <i data-lucide="check" class="w-3.5 h-3.5"></i> Instalação Concluída
+                    </div>
+                </div>
+
+                <!-- Passo 5 -->
+                <div class="glass-card p-6 rounded-3xl border-2 border-emerald-500/50 bg-emerald-950/20 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-gray-950 font-black text-sm flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                            5
+                        </div>
+                        <h4 class="text-white font-bold text-sm">Ativação Vitalícia</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            No app, copie seu <b>Código de Aparelho</b> (ex: <code class="text-emerald-300 font-mono text-[10px]">DEV-8F2B</code>) e envie no WhatsApp junto com o <b>comprovante do Pix</b> para receber sua Chave!
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-emerald-500/20 text-[11px] text-emerald-300 font-bold flex items-center gap-1">
+                        <i data-lucide="key" class="w-3.5 h-3.5"></i> Chave Única Vitalícia
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DESMISTIFICANDO AS MENSAGENS DE SEGURANÇA DO ANDROID -->
+            <div class="bg-gray-950/90 rounded-3xl p-6 sm:p-8 border border-gray-800 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-800 pb-5">
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i data-lucide="help-circle" class="w-5 h-5 text-cyan-400"></i>
+                            O Que Fazer Se o Android Exibir Avisos Durante a Instalação?
+                        </h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                            Essas mensagens são 100% normais para aplicativos instalados diretamente fora da loja. Veja como proceder:
+                        </p>
+                    </div>
+                    <button onclick="copiarInstrucoesInstalacao()" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold rounded-xl border border-gray-700 flex items-center gap-2 shrink-0 transition">
+                        <i data-lucide="copy" class="w-3.5 h-3.5 text-emerald-400"></i>
+                        <span>Copiar Instruções no Celular</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800/80 space-y-3">
+                        <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
+                            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                            Aviso 1: "Arquivo Pode Ser Nocivo"
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            <b>Por que aparece?</b> O navegador Google Chrome exibe esse aviso preventivo obrigatório para <i>qualquer arquivo .apk</i> baixado na internet.
+                        </p>
+                        <p class="text-emerald-400 text-xs font-semibold leading-relaxed bg-emerald-950/50 p-2.5 rounded-xl border border-emerald-500/20">
+                            <b>Solução:</b> Toque no botão <u>"Fazer o download mesmo assim"</u> ou <u>"Baixar mesmo assim"</u>. O arquivo tem 16 MB e é 100% seguro.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800/80 space-y-3">
+                        <div class="flex items-center gap-2 text-cyan-400 font-bold text-xs uppercase tracking-wider">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            Aviso 2: "Instalar Apps Desconhecidos"
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            <b>Por que aparece?</b> O Android bloqueia por padrão que navegadores instalem aplicativos sem a sua permissão expressa.
+                        </p>
+                        <p class="text-cyan-400 text-xs font-semibold leading-relaxed bg-cyan-950/50 p-2.5 rounded-xl border border-cyan-500/20">
+                            <b>Solução:</b> Toque em <u>"Configurações"</u> na mensagem, ative a opção <u>"Permitir desta fonte"</u> e toque na seta de voltar para continuar.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800/80 space-y-3">
+                        <div class="flex items-center gap-2 text-purple-400 font-bold text-xs uppercase tracking-wider">
+                            <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                            Aviso 3: Google Play Protect
+                        </div>
+                        <p class="text-gray-300 text-xs leading-relaxed">
+                            <b>Por que aparece?</b> O Play Protect identifica que o instalador foi baixado de fora do catálogo comercial pago da Play Store.
+                        </p>
+                        <p class="text-purple-300 text-xs font-semibold leading-relaxed bg-purple-950/50 p-2.5 rounded-xl border border-purple-500/20">
+                            <b>Solução:</b> Se a tela exibir "App não reconhecido", toque em <u>"Mais detalhes"</u> e depois em <u>"Instalar assim mesmo"</u>.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- GUIAS RÁPIDOS POR MARCA -->
+                <div class="pt-4 border-t border-gray-800">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-3">Instruções por Fabricante do Celular:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-gray-900/50 p-3.5 rounded-xl border border-gray-800 text-gray-300">
+                            <b class="text-white block mb-1">📱 Samsung Galaxy (One UI):</b>
+                            Abra o app <b>Meus Arquivos > Downloads</b> > Toque em <code class="text-emerald-300">GerenciadorAutomotivo.apk</code> > Se pedir permissão, toque em <b>Configurações > Ativar "Permitir desta fonte"</b> > Toque em <b>Instalar</b>.
+                        </div>
+                        <div class="bg-gray-900/50 p-3.5 rounded-xl border border-gray-800 text-gray-300">
+                            <b class="text-white block mb-1">📱 Motorola (Moto / Hello UI):</b>
+                            Após o download no Chrome, puxe a barra de notificações e toque no arquivo baixado > Toque em <b>Configurações > Permitir desta fonte</b> > Toque em <b>Instalar</b>.
+                        </div>
+                        <div class="bg-gray-900/50 p-3.5 rounded-xl border border-gray-800 text-gray-300">
+                            <b class="text-white block mb-1">📱 Xiaomi / Redmi / Poco (MIUI / HyperOS):</b>
+                            Abra o <b>Gerenciador de Arquivos > APKs</b> > Toque no arquivo > Marque a caixinha <i>"Estou ciente dos possíveis riscos"</i> > Aguarde os 5 segundos e toque em <b>OK</b> > <b>Instalar</b>.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ÁREA DE CHECKOUT PIX & PROCESSO DE LIBERAÇÃO À PROVA DE FRAUDES -->
+    <section id="comprar" class="py-20 md:py-28 relative">
+        <!-- Luz de Fundo -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/20 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-emerald-500/40 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-teal-500 text-gray-950 text-xs font-black px-6 py-1.5 rounded-bl-2xl shadow-md uppercase tracking-wider">
+                    Oferta Exclusiva Pix
+                </div>
+
+                <div class="text-center space-y-3 mb-8">
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Acesso Vitalício Imediato</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Adquira o Gerenciador Automotivo</h2>
+                    <p class="text-gray-300 text-sm max-w-xl mx-auto">
+                        Pague com segurança diretamente no seu banco pelo Pix. Veja abaixo o processo seguro em <b>3 Etapas Claras</b> para baixar e liberar a sua licença vitalícia.
+                    </p>
+                </div>
+
+                <!-- Box de Preço -->
+                <div class="bg-gray-950/80 rounded-2xl p-6 border border-gray-800 text-center mb-8">
+                    <div class="text-gray-400 text-sm line-through mb-1">De R$ 49,90</div>
+                    <div class="flex items-baseline justify-center gap-2">
+                        <span class="text-2xl text-emerald-400 font-bold">R$</span>
+                        <span id="valorDisplay" class="text-5xl sm:text-6xl font-black text-white font-heading">19,90</span>
+                        <span class="text-gray-400 text-sm font-medium">/ pagamento único</span>
+                    </div>
+                    <div class="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/20">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        <span>Economia de R$ 30,00 garantida hoje • Sem mensalidades</span>
+                    </div>
+                </div>
+
+                <!-- ALERTA IMPORTANTE DE SEGURANÇA E COMPROVANTE (EVITA MAL-ENTENDIDOS E CALOTES) -->
+                <div class="mb-8 p-4 sm:p-5 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-xs sm:text-sm text-gray-200 space-y-1">
+                        <b class="text-amber-300 block font-bold text-sm">
+                            ⚠️ REGRA OBRIGATÓRIA DE LIBERAÇÃO: Guarde o Comprovante do Seu Pix!
+                        </b>
+                        <p class="text-gray-300 leading-relaxed text-xs">
+                            O Gerenciador Automotivo possui <b>sistema de segurança por Código Único de Aparelho</b>. A sua Chave de Ativação Vitalícia é emitida pelo desenvolvedor (Márcio) <b>exclusivamente mediante a conferência do comprovante bancário legível no WhatsApp</b>. Não geramos chaves sem o comprovante de pagamento correspondente no extrato bancário.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AS 3 ETAPAS ORDENADAS DE COMPRA E LIBERAÇÃO -->
+                <div class="space-y-8">
+                    
+                    <!-- ETAPA 1: PAGAMENTO PIX -->
+                    <div class="bg-gray-900/90 rounded-2xl p-6 border border-gray-800 space-y-5">
+                        <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-gray-950 font-black text-xs flex items-center justify-center">1</span>
+                            <h3 class="text-base font-bold text-white">Etapa 1: Faça o Pix no Valor de R$ 19,90</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <!-- Lado Esquerdo: QR Code Oficial Gerado -->
+                            <div class="flex flex-col items-center justify-center p-4 bg-gray-950 rounded-xl border border-gray-800">
+                                <div class="text-xs text-gray-400 mb-3 font-semibold flex items-center gap-1.5">
+                                    <i data-lucide="scan" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Abra o app do seu banco e aponte a câmera:</span>
+                                </div>
+                                
+                                <!-- Container QR Code -->
+                                <div id="qrcode" class="p-3 bg-white rounded-xl shadow-lg flex items-center justify-center min-w-[180px] min-h-[180px]"></div>
+
+                                <div class="mt-3 text-center">
+                                    <span id="pixBeneficiarioDisplay" class="text-[11px] text-gray-400 block font-medium">Beneficiário: MARCIO GUIMARAES COSTA</span>
+                                    <span class="text-[11px] text-emerald-400 font-semibold block">Compensação instantânea</span>
+                                </div>
+                            </div>
+
+                            <!-- Lado Direito: Chave Copia e Cola & Chave Direta -->
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1.5 flex items-center justify-between">
+                                        <span>Código Pix Copia e Cola:</span>
+                                        <span class="text-[11px] text-emerald-400 cursor-pointer hover:underline" onclick="copiarPix()">Copiar</span>
+                                    </label>
+                                    <div class="relative">
+                                        <input id="pixPayloadInput" type="text" readonly value="Carregando Pix..." class="w-full bg-gray-950 border border-gray-700 rounded-xl px-3 py-2.5 text-xs text-gray-300 font-mono pr-24 focus:outline-none focus:border-emerald-500 select-all">
+                                        <button onclick="copiarPix()" class="absolute right-1 top-1 bottom-1 bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-3 rounded-lg text-xs font-bold flex items-center gap-1 transition">
+                                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                            <span id="btnCopiarTexto">Copiar</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Chave Pix Direta (E-mail) -->
+                                <div class="bg-gray-950/70 p-3.5 rounded-xl border border-gray-800 text-xs space-y-1">
+                                    <span class="text-gray-400 block">Chave Pix Direta (E-mail):</span>
+                                    <div class="flex items-center justify-between">
+                                        <span id="chavePixTexto" class="font-mono text-emerald-300 font-semibold select-all text-sm">isagabimaxbeta@gmail.com</span>
+                                        <button onclick="copiarChaveSimples()" class="text-gray-300 hover:text-white text-xs underline flex items-center gap-1 bg-gray-800 px-2.5 py-1 rounded-lg">
+                                            <i data-lucide="copy" class="w-3 h-3"></i> Copiar
+                                        </button>
+                                    </div>
+                                    <span class="text-[11px] text-gray-400 block mt-1">Nome: <b>MARCIO GUIMARAES COSTA</b> • Cidade: Rio de Janeiro</span>
+                                </div>
+
+                                <div class="p-3 bg-emerald-950/40 rounded-xl border border-emerald-500/20 text-[11px] text-emerald-300 flex items-center gap-2">
+                                    <i data-lucide="camera" class="w-4 h-4 shrink-0"></i>
+                                    <span>Ao finalizar o Pix no seu banco, <b>tire um print ou salve o comprovante em PDF</b>. Você precisará dele na Etapa 3!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 2: BAIXAR O ARQUIVO .APK -->
+                    <div class="bg-gray-900/90 rounded-2xl p-6 border border-gray-800 space-y-4">
+                        <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                            <span class="w-7 h-7 rounded-full bg-cyan-500 text-gray-950 font-black text-xs flex items-center justify-center">2</span>
+                            <h3 class="text-base font-bold text-white">Etapa 2: Baixe e Instale o Aplicativo no Celular</h3>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-gray-950/80 p-5 rounded-2xl border border-gray-800">
+                            <div class="space-y-1.5 text-center sm:text-left">
+                                <h4 class="text-white font-bold text-sm sm:text-base flex items-center justify-center sm:justify-start gap-2">
+                                    <i data-lucide="smartphone" class="w-5 h-5 text-emerald-400"></i>
+                                    Instalador Oficial: GerenciadorAutomotivo.apk
+                                </h4>
+                                <p class="text-gray-400 text-xs max-w-lg leading-relaxed">
+                                    Tamanho leve de apenas <b>16 MB</b>. Ao abrir o aplicativo pela primeira vez, ele exibirá na tela o seu <b>Código do Aparelho</b> (ex: <span class="text-emerald-300 font-mono font-bold">DEV-A94F-28B1-9C33</span>).
+                                </p>
+                            </div>
+
+                            <a href="GerenciadorAutomotivo.apk" download="GerenciadorAutomotivo.apk" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-gray-950 font-black text-sm rounded-xl shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2.5 transition transform hover:scale-[1.02] shrink-0">
+                                <i data-lucide="download" class="w-4 h-4 stroke-[2.5]"></i>
+                                <span>BAIXAR APLICATIVO (.APK)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 3: ENVIAR COMPROVANTE + CÓDIGO DO DISPOSITIVO -->
+                    <div class="bg-gray-900/90 rounded-2xl p-6 border-2 border-emerald-500/50 space-y-5 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-emerald-500 text-gray-950 text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-wider">
+                            Liberação Imediata
+                        </div>
+
+                        <div class="flex items-center gap-3 border-b border-gray-800 pb-3">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-gray-950 font-black text-xs flex items-center justify-center">3</span>
+                            <div>
+                                <h3 class="text-base font-bold text-white">Etapa 3: Envie o Comprovante do Pix + Código no WhatsApp</h3>
+                                <p class="text-gray-400 text-xs">O desenvolvedor confere o pagamento no extrato e gera sua Chave Vitalícia em instantes.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            
+                            <!-- Campo para o Cliente Digitar o Código do Aparelho Gerado -->
+                            <div class="md:col-span-6 space-y-2">
+                                <label for="inputCodigoAparelho" class="block text-xs font-bold text-gray-300 flex items-center justify-between">
+                                    <span>Código do Seu Aparelho (gerado no app):</span>
+                                    <span class="text-[11px] text-gray-400 font-normal">Ex: DEV-8F2B-9C14</span>
+                                </label>
+                                <div class="relative">
+                                    <input 
+                                        id="inputCodigoAparelho" 
+                                        type="text" 
+                                        placeholder="Cole aqui o código exibido no seu app" 
+                                        class="w-full bg-gray-950 border border-gray-700 rounded-xl px-3.5 py-3 text-xs sm:text-sm text-emerald-300 font-mono tracking-wider focus:outline-none focus:border-emerald-500 placeholder-gray-500 uppercase"
+                                        oninput="atualizarLinkWhatsappComprovante()"
+                                    >
+                                </div>
+                                <p class="text-[11px] text-gray-400">
+                                    <i>Abra o app instalado no celular, toque em "Copiar Código" e cole aqui para agilizar seu envio.</i>
+                                </p>
+                            </div>
+
+                            <!-- Botão de Envio Formatado no WhatsApp -->
+                            <div class="md:col-span-6 flex flex-col justify-center space-y-2">
+                                <a 
+                                    id="btnWhatsappComprovante" 
+                                    href="#" 
+                                    target="_blank" 
+                                    class="w-full py-4 px-6 bg-[#25D366] hover:bg-[#20bd5a] text-gray-950 rounded-2xl font-black text-sm flex items-center justify-center gap-3 shadow-xl shadow-[#25D366]/20 transition transform hover:scale-[1.02]"
+                                >
+                                    <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+                                    <span>ENVIAR COMPROVANTE NO WHATSAPP</span>
+                                </a>
+                                <p class="text-center text-[11px] text-gray-400">
+                                    Ao abrir a conversa, <b>anexe a imagem/PDF do comprovante do Pix</b>.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Checklist de Segurança do Vendedor -->
+                        <div class="pt-4 border-t border-gray-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-gray-300">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                <span>Comprovante oficial com data e valor</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                <span>Chave vinculada ao seu aparelho</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                <span>Suporte humano com o Márcio</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Garantia -->
+                <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i>
+                        <span>Pagamento 100% Protegido e Livre de Mensalidades</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="refresh-ccw" class="w-4 h-4 text-emerald-400"></i>
+                        <span>Garantia Incondicional de 7 Dias (Devolução Total do Pix)</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- POLÍTICA DE PRIVACIDADE E SEGURANÇA -->
+    <section id="seguranca" class="py-20 bg-gray-900/40 border-t border-gray-800/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-emerald-400 font-semibold tracking-wider text-xs uppercase bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-500/20">Transparência Total</span>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">Segurança e Política de Privacidade</h2>
+                <p class="text-gray-400 text-sm">Respeitamos a sua privacidade. Veja como tratamos os seus dados.</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-5 text-gray-300 text-sm leading-relaxed border border-gray-800">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="check-shield" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Armazenamento 100% Local no Aparelho</h4>
+                        <p class="text-xs text-gray-400">Todos os registros de veículos, quilometragens, notas de abastecimento e valores financeiros inseridos ficam salvos exclusivamente no banco de dados local do seu próprio smartphone Android.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <i data-lucide="eye-off" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Sem Coleta de Dados Pessoais ou Rastreamento</h4>
+                        <p class="text-xs text-gray-400">O aplicativo não monitora sua localização em segundo plano, não comercializa informações para empresas de publicidade e não exige login com redes sociais.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <i data-lucide="file-text" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-1">Conformidade com a LGPD (Lei Geral de Proteção de Dados)</h4>
+                        <p class="text-xs text-gray-400">Você tem total controle para editar, exportar ou apagar seus dados a qualquer momento com um único clique nas configurações do sistema.</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-800 flex justify-center">
+                    <button onclick="abrirModalPrivacidade()" class="text-xs text-emerald-400 hover:text-emerald-300 underline font-semibold flex items-center gap-1.5">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        <span>Ler Política de Privacidade Completa e Termos de Uso</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (PERGUNTAS FREQUENTES) -->
+    <section id="faq" class="py-20 border-t border-gray-800/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-cyan-400 font-semibold tracking-wider text-xs uppercase bg-cyan-950/70 px-3 py-1 rounded-full border border-cyan-500/20">Tire Suas Dúvidas</span>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight">Perguntas Frequentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Por que o aplicativo não está na Google Play Store?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Por uma decisão de transparência e preço justo para você! A Google Play Store cobra <b>de 15% a 30% de comissão</b> em dólares em todas as transações, além de taxas anuais de manutenção. Se estivéssemos na loja, o aplicativo teria que custar no mínimo R$ 49,90 ou cobrar mensalidades recorrentes de R$ 19,90 todo mês. Ao distribuir diretamente pelo instalador oficial <b>.APK</b>, eliminamos os intermediários e repassamos toda essa economia para você: apenas <b>R$ 19,90 em pagamento único e vitalício</b>! Além disso, o app é 100% offline e não fica vinculado a serviços de rastreamento do Google.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>O Chrome avisou que "O arquivo pode ser nocivo". É seguro?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        <b>Totalmente seguro e livre de vírus!</b> Essa mensagem é exibida obrigatoriamente pelo navegador Google Chrome para <i>qualquer arquivo de extensão .apk baixado na internet</i> de fora da sua própria loja. É apenas um aviso preventivo padrão. Pode clicar tranquilamente em <b>"Fazer o download mesmo assim"</b> (ou "Baixar mesmo assim"). O arquivo é leve (16 MB), limpo, não exibe anúncios e não solicita permissões invasivas.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Por que é obrigatório enviar o comprovante do Pix para receber a chave?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        O Gerenciador Automotivo possui um <b>sistema de segurança de licença única vinculada ao Código de Aparelho do comprador</b>. Para garantir a idoneidade das transações e evitar tentativas de fraude, a Chave de Ativação Vitalícia só é gerada pelo administrador (Márcio) após a conferência do comprovante oficial do Pix com data, hora e valor no extrato bancário. Isso protege o seu investimento e garante atendimento exclusivo!
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Se alguém repassar o arquivo .APK para outra pessoa, ela consegue usar de graça?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        <b>Não! O sistema possui trava antipirataria nativa por dispositivo.</b> Cada smartphone Android gera um Código de Aparelho totalmente exclusivo (ex: <code class="text-emerald-300 font-mono">DEV-A94F-28B1-9C33</code>). Mesmo que alguém copie ou compartilhe o arquivo .apk, o aplicativo abre bloqueado na tela de ativação e exige uma Chave Criptográfica calculada especificamente para aquele aparelho. Essa chave só pode ser gerada pelo administrador oficial após o pagamento do Pix.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Como o aplicativo calcula o consumo em km/L e a Calculadora Flex?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        É simples, transparente e sem complicação! Você pode registrar seu abastecimento informando os <b>KM rodados</b> pelo odômetro parcial (trip) que você zerou no painel, ou pelo odômetro total. O aplicativo faz a divisão matemática exata dos quilômetros percorridos pelos litros colocados e calcula sua média de consumo na hora. Além disso, a Calculadora Flex analisa os preços do Etanol e da Gasolina e te avisa imediatamente qual combustível compensa mais para o seu bolso usando a regra dos 70%!
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Preciso pagar mensalidade ou anuidade?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Não! O valor de R$ 19,90 é pagamento único. Você paga uma única vez e o aplicativo é seu para sempre, sem nenhuma cobrança recorrente no seu cartão ou banco.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>Funciona em qual versão do Android?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Funciona em praticamente todos os celulares e tablets Android modernos (Android 7.0 até o mais recente Android 14/15), incluindo marcas como Samsung Galaxy, Motorola, Xiaomi/Redmi, LG, Realme, etc.
+                    </p>
+                </details>
+
+                <details class="glass-card rounded-2xl p-5 border border-gray-800 cursor-pointer group">
+                    <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+                        <span>E se eu não gostar ou tiver problemas?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Oferecemos garantia de 7 dias. Se você tiver qualquer problema na instalação ou achar que o sistema não atendeu às suas expectativas, basta nos chamar no WhatsApp que devolvemos 100% do seu Pix sem burocracia.
+                    </p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12 text-center text-xs text-gray-500 space-y-4">
+        <div class="flex items-center justify-center gap-2">
+            <img src="assets/icone_app_512x512.png" alt="Logo" class="w-7 h-7 rounded-lg">
+            <span class="text-white font-bold text-sm">Gerenciador Automotivo</span>
+        </div>
+        <p>© 2026 Gerenciador Automotivo. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-gray-400">
+            <button onclick="abrirModalPrivacidade()" class="hover:text-white underline">Política de Privacidade</button>
+            <span>•</span>
+            <button onclick="abrirModalTermos()" class="hover:text-white underline">Termos de Uso</button>
+            <span>•</span>
+            <button onclick="abrirConfigModal()" class="text-emerald-400 hover:underline">Configurações do Vendedor (Pix/WhatsApp)</button>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+    <a id="btnWhatsappFlutuante" href="#" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-gray-950 p-3.5 rounded-full shadow-2xl shadow-emerald-500/50 flex items-center justify-center transition-all transform hover:scale-110" title="Dúvidas no WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- MODAL DE POLÍTICA DE PRIVACIDADE -->
+    <div id="modalPrivacidade" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                    <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+                    Política de Privacidade - Gerenciador Automotivo
+                </h3>
+                <button onclick="fecharModalPrivacidade()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p><b>1. Princípio da Privacidade por Design:</b> O aplicativo "Gerenciador Automotivo" foi concebido para funcionar de forma descentralizada. Não exigimos que o usuário cadastre senhas em servidores remotos nem enviamos histórico de deslocamento para bancos de dados externos.</p>
+                <p><b>2. Armazenamento e Propriedade dos Dados:</b> Todas as informações de gastos, odômetros, veículos e revisões cadastradas permanecem armazenadas no banco de dados local do dispositivo móvel do usuário (SQLite/Room). O usuário é o exclusivo proprietário de seus registros.</p>
+                <p><b>3. Ausência de Rastreamento Comercial:</b> Não utilizamos kits de desenvolvimento (SDKs) para rastreamento de anúncios comportamentais, venda de listas para seguradoras ou monitoramento oculto.</p>
+                <p><b>4. Permissões de Sistema:</b> O aplicativo solicita apenas as permissões estritamente necessárias para o seu funcionamento (ex: armazenamento para exportar relatórios ou notificações locais para avisos de revisão).</p>
+                <p><b>5. LGPD:</b> Em total consonância com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais do Brasil), o usuário tem autonomia para apagar seus dados a qualquer instante simplesmente limpando os dados do aplicativo ou desinstalando-o.</p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 text-right">
+                <button onclick="fecharModalPrivacidade()" class="px-4 py-2 bg-emerald-500 text-gray-950 rounded-xl text-xs font-bold">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE TERMOS DE USO -->
+    <div id="modalTermos" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                    <i data-lucide="file-check" class="w-4 h-4 text-emerald-400"></i>
+                    Termos de Uso e Licença Vitalícia
+                </h3>
+                <button onclick="fecharModalTermos()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p><b>1. Concessão de Licença:</b> Ao adquirir o "Gerenciador Automotivo", é concedida ao comprador uma licença de uso pessoal, vitalícia e intransferível para instalação em seus próprios dispositivos Android.</p>
+                <p><b>2. Pagamento Único:</b> Não haverá cobrança recorrente, mensalidades, taxas de renovação anual ou custos ocultos para o uso contínuo das funcionalidades adquiridas.</p>
+                <p><b>3. Garantia Incondicional de 7 Dias:</b> O adquirente tem o prazo legal e contratual de 7 (sete) dias a contar da data de confirmação do Pix para testar o software. Caso opte pelo cancelamento, o valor pago será integralmente restituído.</p>
+                <p><b>4. Suporte ao Cliente:</b> O suporte técnico para dúvidas sobre instalação e utilização é prestado via canal de WhatsApp oficial indicado nesta página.</p>
+            </div>
+            <div class="pt-3 border-t border-gray-800 text-right">
+                <button onclick="fecharModalTermos()" class="px-4 py-2 bg-emerald-500 text-gray-950 rounded-xl text-xs font-bold">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: GERADOR DINÂMICO DE PIX EMV (BANCO CENTRAL) & LÓGICA -->
+    <script>
+        // Configurações Oficiais e Blindadas do Pix (Banco Central do Brasil)
+        const PIX_CONFIG = {
+            chavePix: "isagabimaxbeta@gmail.com",
+            nomeBeneficiario: "MARCIO GUIMARAES COSTA",
+            cidade: "RIO DE JANEIRO",
+            valor: "19.90",
+            whatsapp: "5521999893885"
+        };
+
+        const currentConfig = { ...PIX_CONFIG };
+
+        // Garante que o navegador use sempre os dados oficiais atualizados
+        function carregarConfig() {
+            try {
+                localStorage.removeItem("controle_auto_pix_cfg");
+            } catch(e) {}
+            atualizarTelaComConfig();
+        }
+
+        // Função de CRC16 para o padrão oficial Pix do Banco Central do Brasil
+        function crc16(str) {
+            let crc = 0xFFFF;
+            for (let c = 0; c < str.length; c++) {
+                crc ^= str.charCodeAt(c) << 8;
+                for (let i = 0; i < 8; i++) {
+                    if ((crc & 0x8000) !== 0) {
+                        crc = (crc << 1) ^ 0x1021;
+                    } else {
+                        crc = crc << 1;
+                    }
+                }
+            }
+            return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+        }
+
+        // Gera o payload Pix EMV oficial (QR Code e Copia e Cola)
+        function gerarPixPayload(chave, nome, cidade, valor) {
+            function formatField(id, val) {
+                const len = val.length.toString().padStart(2, '0');
+                return `${id}${len}${val}`;
+            }
+
+            // Normalização
+            const cleanKey = chave.trim();
+            const cleanName = (nome || "CONTROLE AUTO").normalize("NFD").replace(/[\u0300-\u036f]/g, "").substring(0, 25).toUpperCase();
+            const cleanCity = (cidade || "SAO PAULO").normalize("NFD").replace(/[\u0300-\u036f]/g, "").substring(0, 15).toUpperCase();
+            const cleanValor = parseFloat(valor || "19.90").toFixed(2);
+
+            let payload = "";
+            payload += formatField("00", "01"); // Payload Format Indicator
+            
+            // Merchant Account Information (GUI + Chave)
+            const gui = formatField("00", "br.gov.bcb.pix");
+            const keyField = formatField("01", cleanKey);
+            payload += formatField("26", `${gui}${keyField}`);
+
+            payload += formatField("52", "0000"); // Merchant Category Code
+            payload += formatField("53", "986");  // Transaction Currency (BRL)
+            payload += formatField("54", cleanValor); // Transaction Amount
+            payload += formatField("58", "BR");   // Country Code
+            payload += formatField("59", cleanName); // Merchant Name
+            payload += formatField("60", cleanCity); // Merchant City
+            
+            // Additional Data Field (TXID)
+            const txid = formatField("05", "***");
+            payload += formatField("62", txid);
+
+            // CRC16 Checksum
+            payload += "6304";
+            const checksum = crc16(payload);
+            return payload + checksum;
+        }
+
+        // Renderiza o QR Code e preenche os campos
+        let qrcodeInstance = null;
+        function renderizarPix() {
+            const payload = gerarPixPayload(
+                currentConfig.chavePix,
+                currentConfig.nomeBeneficiario,
+                currentConfig.cidade,
+                currentConfig.valor
+            );
+
+            // Atualiza Input Copia e Cola
+            document.getElementById("pixPayloadInput").value = payload;
+            document.getElementById("chavePixTexto").textContent = currentConfig.chavePix;
+            document.getElementById("valorDisplay").textContent = parseFloat(currentConfig.valor).toFixed(2).replace('.', ',');
+            document.getElementById("pixBeneficiarioDisplay").textContent = `Beneficiário: ${currentConfig.nomeBeneficiario}`;
+
+            // Atualiza Links de WhatsApp
+            atualizarLinkWhatsappComprovante();
+            
+            const msgSuporte = encodeURIComponent(`Olá Márcio! Tenho dúvidas sobre o aplicativo Gerenciador Automotivo e gostaria de mais informações.`);
+            const whatsSuporteUrl = `https://wa.me/${currentConfig.whatsapp}?text=${msgSuporte}`;
+            const btnFlutuante = document.getElementById("btnWhatsappFlutuante");
+            if (btnFlutuante) btnFlutuante.href = whatsSuporteUrl;
+
+            // Renderiza QR Code
+            const qrContainer = document.getElementById("qrcode");
+            qrContainer.innerHTML = "";
+            qrcodeInstance = new QRCode(qrContainer, {
+                text: payload,
+                width: 180,
+                height: 180,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        function atualizarLinkWhatsappComprovante() {
+            const inputCodigo = document.getElementById("inputCodigoAparelho");
+            const codigo = inputCodigo ? inputCodigo.value.trim().toUpperCase() : "";
+            
+            let msgWhats = "";
+            if (codigo) {
+                msgWhats = `Olá Márcio! Acabei de fazer o Pix de R$ ${currentConfig.valor} referente ao Gerenciador Automotivo. Segue em anexo o meu COMPROVANTE DO PIX. O Código do meu Aparelho gerado no app é: ${codigo}. Aguardo a conferência e o envio da minha Chave de Ativação Vitalícia!`;
+            } else {
+                msgWhats = `Olá Márcio! Acabei de fazer o Pix de R$ ${currentConfig.valor} referente ao Gerenciador Automotivo. Segue em anexo o meu COMPROVANTE DO PIX para validação e liberação da minha Chave de Ativação Vitalícia!`;
+            }
+
+            const whatsUrl = `https://wa.me/${currentConfig.whatsapp}?text=${encodeURIComponent(msgWhats)}`;
+            const btn = document.getElementById("btnWhatsappComprovante");
+            if (btn) btn.href = whatsUrl;
+        }
+
+        function copiarInstrucoesInstalacao() {
+            const texto = `📲 PASSO A PASSO PARA INSTALAR O GERENCIADOR AUTOMOTIVO NO SEU ANDROID:\n\n1. Toque em 'Baixar Aplicativo (.APK)' para salvar o arquivo de 16 MB no seu celular.\n2. Se o navegador avisar 'O arquivo pode ser nocivo', toque em 'Fazer o download mesmo assim' (é um aviso padrão preventivo do Google para arquivos fora da loja).\n3. Ao abrir o arquivo baixado, se pedir autorização, toque em 'Configurações' e ative 'Permitir desta fonte'.\n4. Toque em 'Instalar' e depois em 'Abrir'.\n5. Copie o Código do seu Aparelho (ex: DEV-XXXX) exibido na tela inicial do app.\n6. Envie o código junto com o comprovante do Pix de R$ 19,90 no WhatsApp do Márcio para receber sua Chave de Ativação Vitalícia!`;
+
+            navigator.clipboard.writeText(texto).then(() => {
+                alert("Instruções copiadas com sucesso! Você pode colar no WhatsApp ou no seu bloco de notas.");
+            }).catch(() => {
+                alert("Instruções selecionadas!");
+            });
+        }
+
+        function copiarPix() {
+            const input = document.getElementById("pixPayloadInput");
+            input.select();
+            input.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(input.value).then(() => {
+                const btnTexto = document.getElementById("btnCopiarTexto");
+                btnTexto.textContent = "Copiado! ✓";
+                setTimeout(() => { btnTexto.textContent = "Copiar"; }, 3000);
+            }).catch(() => {
+                alert("Código selecionado! Use Ctrl+C para copiar.");
+            });
+        }
+
+        function copiarChaveSimples() {
+            navigator.clipboard.writeText(currentConfig.chavePix).then(() => {
+                alert("Chave Pix copiada com sucesso: " + currentConfig.chavePix);
+            });
+        }
+
+        function atualizarTelaComConfig() {
+            renderizarPix();
+        }
+
+        // Modais de Políticas e Termos
+        function abrirModalPrivacidade() {
+            document.getElementById("modalPrivacidade").classList.remove("hidden");
+        }
+        function fecharModalPrivacidade() {
+            document.getElementById("modalPrivacidade").classList.add("hidden");
+        }
+
+        function abrirModalTermos() {
+            document.getElementById("modalTermos").classList.remove("hidden");
+        }
+        function fecharModalTermos() {
+            document.getElementById("modalTermos").classList.add("hidden");
+        }
+
+        // Dados Completos das 8 Telas do Aplicativo na Sequência Exata
+        const TELAS_APP = [
+            {
+                numero: 1,
+                tag: "Tela 1 de 8",
+                categoria: "Segurança & Acesso",
+                titulo: "Login Seguro & Biometria em 1 Toque",
+                descricao: "Faça login com e-mail e senha ou use o sensor biométrico (impressão digital) para acesso rápido. Seus dados de combustível e histórico mecânico ficam 100% protegidos e confidenciais no seu smartphone.",
+                imagem: "assets/Tela 1.jpg",
+                destaques: [
+                    "Entrada com impressão digital ou senha",
+                    "Acesso seguro e sem compartilhamento externo",
+                    "Interface moderna com suporte a modo escuro"
+                ]
+            },
+            {
+                numero: 2,
+                tag: "Tela 2 de 8",
+                categoria: "Painel do Motorista",
+                titulo: "Dashboard de Desempenho & Autonomia",
+                descricao: "Visão geral completa do seu veículo (ex: Volkswagen T-Cross 2021 • Placa LRK8231), indicador de autonomia média restante de 32.375 km até a próxima revisão, alertas ativos e atalhos rápidos de serviços.",
+                imagem: "assets/Tela 2.jpg",
+                destaques: [
+                    "Monitoramento de autonomia até a próxima revisão",
+                    "Status do veículo em tempo real (Ativo / Excelente)",
+                    "Controle rápido de múltiplos carros e motos"
+                ]
+            },
+            {
+                numero: 3,
+                tag: "Tela 3 de 8",
+                categoria: "Gráficos de Desgaste",
+                titulo: "Métricas de Autonomia & Peças Restantes",
+                descricao: "Gráficos intuitivos comparando os quilômetros rodados com a autonomia restante para componentes vitais como Correia do Ar e Correia da Direção. O sistema confirma se todas as peças estão dentro da margem segura de uso.",
+                imagem: "assets/Tela 3.jpg",
+                destaques: [
+                    "Gráfico visual comparativo de km rodados vs autonomia",
+                    "Controle individual de Correia do Ar e Direção",
+                    "Notificação de segurança preventiva para o motorista"
+                ]
+            },
+            {
+                numero: 4,
+                tag: "Tela 4 de 8",
+                categoria: "Saúde do Veículo",
+                titulo: "Relatório de Serviços & Troca de Peças",
+                descricao: "Monitore o desgaste de cada peça e equipamento do seu carro. Acompanhe a data do serviço, percentual de desgaste, limites de quilometragem (ex: 160.000 km) e conclua ou adicione novas manutenções facilmente.",
+                imagem: "assets/Tela 4.jpg",
+                destaques: [
+                    "Acompanhamento da vida útil e desgaste de cada componente",
+                    "Botão direto 'Add Serviços / Peças'",
+                    "Ação rápida de 'Concluir Serviço' após a oficina"
+                ]
+            },
+            {
+                numero: 5,
+                tag: "Tela 5 de 8",
+                categoria: "Análise Detalhada",
+                titulo: "Medidor Circular & Estimativa de Troca",
+                descricao: "Modal de diagnóstico detalhado com medidor circular de desgaste estimado (ex: 0% de uso), autonomia restante segura de 40.000 km, data da última troca, intervalo recomendado e quilometragem prevista para a próxima substituição.",
+                imagem: "assets/Tela 5.jpg",
+                destaques: [
+                    "Medidor circular em percentual de desgaste",
+                    "Previsão exata da quilometragem da próxima troca",
+                    "Intervalo recomendado pelo fabricante do veículo"
+                ]
+            },
+            {
+                numero: 6,
+                tag: "Tela 6 de 8",
+                categoria: "Linha do Tempo",
+                titulo: "Histórico Cronológico Completo do Veículo",
+                descricao: "Linha do tempo interativa e contínua conectando todo o ciclo do carro: desde a instalação anterior estimada no passado, as revisões concluídas com sucesso, o odômetro atual reportado hoje e a próxima revisão prevista no futuro.",
+                imagem: "assets/Tela 6.jpg",
+                destaques: [
+                    "Linha do tempo com passado, presente e futuro do veículo",
+                    "Rastreamento de serviços realizados com data e km",
+                    "Histórico valorizado para revenda do automóvel"
+                ]
+            },
+            {
+                numero: 7,
+                tag: "Tela 7 de 8",
+                categoria: "Gestão Multiveículos",
+                titulo: "Busca Instantânea de Carro por Placa",
+                descricao: "Localize qualquer veículo cadastrado em poucos segundos digitando a placa (ex: LRK8231). Permite gerenciar carros de toda a família, motos de entrega ou frotas de empresas com agilidade máxima.",
+                imagem: "assets/Tela 7.jpg",
+                destaques: [
+                    "Busca rápida e filtro por placa Mercosul ou padrão",
+                    "Troca dinâmica entre múltiplos veículos em 1 toque",
+                    "Histórico isolado e seguro para cada automóvel"
+                ]
+            },
+            {
+                numero: 8,
+                tag: "Tela 8 de 8",
+                categoria: "Perfil & Mecânico",
+                titulo: "Perfil do Condutor, Mapa & WhatsApp do Mecânico",
+                descricao: "Central completa do proprietário (Márcio Costa), dados do Volkswagen T-Cross 2021, localização no mapa da oficina (Av. Geremário Dantas 626) e botões diretos para chamar no WhatsApp ou ligar para o mecânico de confiança.",
+                imagem: "assets/Tela 8.jpg",
+                destaques: [
+                    "Endereço e mapa integrado do mecânico de confiança",
+                    "Botão direto 'WhatsApp com o Mecânico'",
+                    "Botão de discagem rápida 'Ligar para o Mecânico'"
+                ]
+            }
+        ];
+
+        let currentSlideIndex = 0;
+        let slideInterval = null;
+
+        function atualizarSlideUI() {
+            const tela = TELAS_APP[currentSlideIndex];
+            if (!tela) return;
+            
+            // Atualiza Slides (Visibilidade e Opacidade)
+            document.querySelectorAll(".carousel-slide").forEach((slide, idx) => {
+                if (idx === currentSlideIndex) {
+                    slide.classList.remove("opacity-0", "pointer-events-none");
+                    slide.classList.add("opacity-100");
+                } else {
+                    slide.classList.remove("opacity-100");
+                    slide.classList.add("opacity-0", "pointer-events-none");
+                }
+            });
+
+            // Atualiza Textos
+            document.getElementById("slideTagBadge").textContent = tela.tag;
+            document.getElementById("slideCategory").textContent = tela.categoria;
+            document.getElementById("currentSlideDisplay").textContent = tela.numero;
+            document.getElementById("slideTitle").textContent = tela.titulo;
+            document.getElementById("slideDesc").textContent = tela.descricao;
+            
+            // Atualiza Destaques
+            document.getElementById("hl1").textContent = tela.destaques[0];
+            document.getElementById("hl2").textContent = tela.destaques[1];
+            document.getElementById("hl3").textContent = tela.destaques[2];
+
+            // Atualiza Abas / Tabs (rola apenas internamente a barra horizontal de abas, sem puxar a tela inteira para baixo)
+            const tabsBar = document.getElementById("carouselTabsBar");
+            document.querySelectorAll(".tab-btn").forEach((btn, idx) => {
+                if (idx === currentSlideIndex) {
+                    btn.className = "tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-emerald-500/40 bg-emerald-500/20 text-emerald-300";
+                    if (tabsBar) {
+                        const btnLeft = btn.offsetLeft;
+                        const btnWidth = btn.offsetWidth;
+                        const containerWidth = tabsBar.offsetWidth;
+                        tabsBar.scrollTo({
+                            left: btnLeft - (containerWidth / 2) + (btnWidth / 2),
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    btn.className = "tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border border-gray-800 bg-gray-900/80 text-gray-400 hover:text-gray-200";
+                }
+            });
+
+            // Atualiza Dots
+            const dots = document.querySelectorAll("#carouselDots button");
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.className = "w-3 h-3 rounded-full transition-all bg-emerald-400 scale-125";
+                } else {
+                    dot.className = "w-2.5 h-2.5 rounded-full transition-all bg-gray-700 hover:bg-gray-500";
+                }
+            });
+
+            // Atualiza Ícones Lucide
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function mudarSlide(direcao) {
+            currentSlideIndex += direcao;
+            if (currentSlideIndex < 0) currentSlideIndex = TELAS_APP.length - 1;
+            if (currentSlideIndex >= TELAS_APP.length) currentSlideIndex = 0;
+            atualizarSlideUI();
+            reiniciarTimerSlide();
+        }
+
+        function irParaSlide(index) {
+            currentSlideIndex = index;
+            atualizarSlideUI();
+            reiniciarTimerSlide();
+        }
+
+        function iniciarTimerSlide() {
+            slideInterval = setInterval(() => {
+                mudarSlide(1);
+            }, 5000);
+        }
+
+        function pausarTimerSlide() {
+            if (slideInterval) clearInterval(slideInterval);
+        }
+
+        function reiniciarTimerSlide() {
+            pausarTimerSlide();
+            iniciarTimerSlide();
+        }
+
+        // Funções de Zoom
+        function abrirZoomAtual() {
+            const tela = TELAS_APP[currentSlideIndex];
+            const activeSlideImg = document.querySelector(`.carousel-slide[data-index="${currentSlideIndex}"] img`);
+            document.getElementById("zoomImage").src = activeSlideImg ? activeSlideImg.src : tela.imagem;
+            document.getElementById("zoomTitle").textContent = `${tela.tag}: ${tela.titulo}`;
+            document.getElementById("modalZoom").classList.remove("hidden");
+        }
+
+        function fecharZoom() {
+            document.getElementById("modalZoom").classList.add("hidden");
+        }
+
+        // Suporte a Swipe no Mobile
+        function configurarSwipe() {
+            const container = document.getElementById("phoneScreenContainer");
+            if (!container) return;
+            let touchStartX = 0;
+            let touchEndX = 0;
+            container.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+                pausarTimerSlide();
+            }, { passive: true });
+
+            container.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 45) {
+                    mudarSlide(1);
+                } else if (touchEndX - touchStartX > 45) {
+                    mudarSlide(-1);
+                }
+                reiniciarTimerSlide();
+            }, { passive: true });
+
+            // Pausa no hover do mouse para facilitar a leitura
+            const wrapper = document.getElementById("carouselWrapper");
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', pausarTimerSlide);
+                wrapper.addEventListener('mouseleave', reiniciarTimerSlide);
+            }
+        }
+
+        // Inicialização
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            carregarConfig();
+            atualizarSlideUI();
+            iniciarTimerSlide();
+            configurarSwipe();
+        });
+    </script>
+</body>
+</html>
